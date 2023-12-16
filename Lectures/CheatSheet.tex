@@ -1,0 +1,50 @@
+\section*{Cheat sheet}
+This paper is a summary of Game Theory course of UniPD, a.y. 2023/24.\\It's not intended to substitute slides or book study.
+
+\subsection*{Static games}
+Supposing you know how to write the normal form of a game and find NE, here are some of the most important formulas:
+\subsubsection*{Mixed strategies}
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{ccccc}
+        ~ & ~ & \multicolumn{3}{c}{Player B} \\
+        ~ & ~ & ~ & \textit{q} & \textit{1-q} \\
+        \multirow{3}{*}{\rotatebox{90}{Player A}} &
+            ~ & ~ & T & N \\ \cline{4-5}
+        ~ & \textit{p} & \multicolumn{1}{c|}{T} & \multicolumn{1}{c|}{3,3} & \multicolumn{1}{c|}{0,0} \\ \cline{4-5}
+        ~ & \textit{1-p} & \multicolumn{1}{c|}{N} & \multicolumn{1}{c|}{0,0} & \multicolumn{1}{c|}{6,1} \\ \cline{4-5}
+    \end{tabular}
+\end{table}
+
+\textbf{Find all additional Nash equilibria of this game in mixed strategies}
+\mat{u_A(T,T)q + u_A(T,N)(1-q) = u_A(N,T)q + u_A(N,N)(1-q)}
+\mat{u_B(T,T)p + u_B(N,T)(1-p) = u_B(T,N)p + u_B(N,N)(1-p)}
+Find \m{p\text{ and }q}
+
+\subsection*{Multistage games}
+
+\subsubsection*{Grim trigger strategy}
+The Grim Trigger strategy goal is to punish the other player if he deviates from the chosen strategy. The goal is to find a $\delta$ s.t. the punishment is enough to avoid deviation.
+
+Here the procedure for \textbf{infinitely repeated games}:
+\begin{itemize}
+    \item Chose the player who gains more from deviation
+    \item Call $p^*$ the payoff of the chosen strategy
+    \item Call $p$ the payoff of the other strategy (usually NE)
+    \item Apply the formula below
+    \item Solve for $\delta$
+\end{itemize}
+\mat{\frac{p^*}{1-\delta} \geq p + \frac{p \delta}{1-\delta}}
+
+\subsubsection*{Stick and carrot}
+Same as before, but for \textbf{finitely repeated games}:
+\begin{itemize}
+    \item Chose the player who gains more from deviation
+    \item Let $p$ the payoff of the chosen strategy (usually cooperation, not necessary a NE)
+    \item Let $p_s$ the payoff of deviating
+    \item Let the payoff of the other strategy, usually stick and carrot, $p_s$ and $p_c$ respectively
+    \item Apply the formula below
+    \item Solve for $\delta$
+\end{itemize}
+The intuition is to calculate the payoff of following cooperation plus the reward, then compare it with the payoff of deviating and receiving the stick.
+\mat{p + \delta p_c \geq p_d + \delta p_s}

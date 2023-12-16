@@ -26,10 +26,10 @@ We call a \textbf{grim trigger strategy} (GrT) a strategy where: start playing M
 \Que{How can we show that a strategy is a NE in overall game?}
 \Ans[]{We only need to compare who options:
 \begin{itemize}
-    \item Cooperate and keep playing the chosen strategy (payoff $^*$) forever (\m{u_T = p^* + \delta p^* + \delta^2 p^* + \dots = \frac{p^*}{1-\delta}})
-    \item Defect at stage 1 and keep playing other option (payoff $p$) forever (\m{u_T = p + \delta p + \delta^2 p + \dots = p + \frac{\delta}{1-\delta}})
+    \item Cooperate and keep playing the chosen strategy (payoff $p^*$) forever (\m{u_T = p^* + \delta p^* + \delta^2 p^* + \dots = \frac{p^*}{1-\delta}})
+    \item Defect at stage 1 and keep playing other option (payoff $p$) forever (\m{u_T = p + \delta p + \delta^2 p + \dots = p^* + \frac{p \delta}{1-\delta}})
 \end{itemize}
-In order to fine minimum $\delta$ s.t. cooperation is best choice, solve \mat{\frac{p^*}{1-\delta} \geq p + \frac{\delta}{1-\delta}}
+In order to find minimum $\delta$ s.t. cooperation is best choice, solve \mat{\frac{p^*}{1-\delta} \geq p + \frac{p \delta}{1-\delta}}
 }
 
 \Que{Friedman theorem (a.k.a. "folk theorem")}
