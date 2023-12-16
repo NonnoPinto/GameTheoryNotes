@@ -1,0 +1,24 @@
+\section{Potential games, congestion games, coordination games; computational complexity of Nash Equilibrium search}
+
+\Que{What is a potential game?}
+\Ans[A potential game ]{is a fictitious game that converges to NE. A fictitious game is a game where regrets become actual changes of moves.
+
+Function \m{\Omega : S \xrightarrow{} \mathbb{R}} is an exact potential for $\ml{G}$ if: \mat{\Omega(s'_i,s_{-i}) - \Omega(s_i,s_{-i}) = u_i(s'_i,s_{-i}) - u_i(s_i,s_{-i} = \Delta U_i}
+
+Function \m{\Omega : S \xrightarrow{} \mathbb{R}} is a weighted potential for $\ml{G}$ with weight \m{w = {w_i > 0}} if: \mat{\Omega(s'_i,s_{-i}) - \Omega(s_i,s_{-i}) = w_i \Delta u_i}
+
+Function \m{\Omega : S \xrightarrow{} \mathbb{R}} is an ordinal potential for $\ml{G}$ if: \mat{\Omega(s'_i,s_{-i}) > \Omega(s_i,s_{-i}) \Longleftrightarrow u_i(s'_i,s_{-i}) > u_i(s_i,s_{-i})}}
+
+\Que{Th: Every potential game has (at least) one NE in pure strategies}
+
+\Que{Which types of potential games does exist?}
+\Ans[]{Congestion game: a potential game where players choose the "least congest" resource.
+
+Coordination game: models situations where players have incentive to coordinate their actions.
+
+Dummy (or pure-externality) game: game in such that \m{\fa s_{-i}, u_i(s_i,s_{-i}) = u_i(s'_i,s_{-i})}, i.e. players payoff depends only on $s_{-i}$.
+
+\textbf{N.B.} every potential game is a sum of coordination game and dummy game.}
+
+\Que{What is the computational complexity of finding NE?}
+\Ans[It's PPAD.]{ NE theorem states that a solution must exist, so it cannot be NP-complete. On the other hand, finding a NE in some case can be very difficult. Let's say (with the nth abuse of notation) that \m{P<PPAD<NP}. Wich means that $PPAD$ is hard till we demonstrate \m{P = NP}. In this class we find the \href{https://math.stackexchange.com/questions/3236049/end-of-the-line-ppad-complexity}{"end-of-line problem"}.}

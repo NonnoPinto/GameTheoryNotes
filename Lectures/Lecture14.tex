@@ -1,0 +1,71 @@
+\section{Multistage games pt 2, stick-and-carrot strategies}
+
+\Que{What is a strategy in a multistage game?}
+\Ans[]{Each player has to specify what to do in the first stage and what to do in subsequent games depending on the outcome of previous games.}
+
+\Que{Theorem for independent stages}
+\Ans[]{Suppose \m{s^{(t)} = (s_1^{(1)}, \dots, s_n^{(t)})} is a NE strategy for stage $t$ of multistage game $\ml{G}$; then there is a SPE of $\ml{G}$ with equilibrium path \m{(s_1^{(1)}, \dots, s_n^{(t)})}. In other words, a strategy where each player always plays a NE, is a SPE.}
+
+\Que{Theorem for linked stages 1}
+\Ans[]{Every NE $s^*$ of multistage game \m{\ml{G} = (\ml{G}_1, \dots, \ml{G}_T)} requires that a NE is played in the last stage. In other words, in order for a strategy to be a NE, it has to have a NE in the last stage, since players already know all previous outcomes.}
+
+\Que{Theorem for linked stages 2}
+\Ans[]{If stage games \m{\ml{G}_1, \dots, \ml{G}_T} has all unique NE, then \m{\ml{G} = (\ml{G}_1, \dots, \ml{G}_T)} has unique SPE. In other words, if every stage has only one NE, this is the equilibrium path.
+
+There is a counter intuitive consequence of these theorems: if the last stage has multiple NE, that enable non-NE strategies to be played in previous stages.}
+
+\Que{What is the meaning of $\delta$?}
+\Ans[$\delta$]{ is the measure of how much we care about the future. A larger $\delta$ means we care more about future payoffs.}
+
+\Que{One-stage deviation principle}
+\Ans[]{A one stage unimprovable strategy must be optimal. \textit{(proof in Lecture14)}}
+\Spec{\textbf{Optimal strategy}: a strategy $s_i$ is optimal for player $i$ i $\fa$ information set $h_i$ there is no way to improve it (more formally: \m{\nexists s'_i / u_i(s'_i|\{h_i\} > u_i(s_i|\{h_i\}}).
+
+\textbf{One-stage unimprovable strategy}: a strategy $s_i$ is one-stage unimprovable if there is no $s'_i$ that differes in one single stage s.t. \m{u_i(s'_i|\{h_i\} > u_i(s_i|\{h_i\}}}
+
+\Que{Exercise 1}
+\Ans[]{Consider multistage game $\ml{G}$ = ($\ml{G}_1$, $\ml{G}_2$), with $\ml{G}_1$ being the first stage, and $\ml{G}_2$ being the second (and last) stage:
+\begin{itemize}
+    \item Is it possible (for some $\ml{G}_1$ and $\ml{G}_2$) to find a SPE for $\ml{G}$ where a non-NE is played in G2?  \textbf{No}
+    \item Is it possible (for some $\ml{G}_1$ and  $\ml{G}_2$) to find a NE for $\ml{G}$ where a non-NE is played in G2? \textbf{No}
+    \item Is it possible (for some $\ml{G}_1$ and  $\ml{G}_2$) to find a SPE for $\ml{G}$ where a non-NE is played in G1? \textbf{Yes}
+    \item Is it possible (for some $\ml{G}_1$ and  $\ml{G}_2$) to find a SPE for $\ml{G}$ where a strictly dominated strategy is played in G1? \textbf{Yes}
+    \item What is the minimum number of NE in stage game $\ml{G}_2$ to enable a carrot-and-stick SPE in G? What characteristics should these NE have? \textbf{At least two NE (stick and carrot)}
+\end{itemize}
+\textit{Answers are mine, so feel free to mail me if they are wrong}
+}
+
+\Que{Exercise 2
+
+Ashley and Brook live together. During the winter break they contemplate giving each other a nice gift (G) for Christmas or not (N). They know each other’s preferences so they are able to buy a gift for 10 euros that is worth like 100 euros for the other. They
+make this decision independently and without telling each other. After Christmas, they also consider whether to celebrate New Year’s eve downtown (D) or stay home (H).
+For the New Year’s eve celebration, they decide independently of each other in a coordination-game fashion. Staying home has utility of $0$ for both. Going downtown has utility of $50$. However, spending New Year’s eve apart from each other has utility of $-100$ for both. The total payoff of the players is the sum of the partial payoffs in each stage with a discount factor of $\delta$ for the second stage.
+\begin{enumerate}
+    \item Write down the normal form of both stages of the multi-stage game.
+    \item Find a trivial subgame-perfect equilibrium of the game where the players just play a Nash equilibrium in all stages, without any strategic connection.
+    \item Is there a strategically connected SPE of the whole game where Ashley and Brook give gifts to each other? If so, show the minimum required discount factor value $\delta$min for that to hold.
+\end{enumerate}
+}
+\Ans[]{
+\begin{enumerate}
+    \item Normal form of stage game
+        \begin{table}[!ht]
+            \begin{tabular}{c|c|c}
+              & G       & N       \\ \hline
+            G & 90 90   & -10 100 \\ \hline
+            N & 100 -10 & 0 0    
+            \end{tabular}
+            \quad
+            \begin{tabular}{c|c|c}
+              & H         & D       \\ \hline
+            H & 0 0       & -100 -100\\ \hline
+            D & -100 -100 & 50 50    
+            \end{tabular}
+        \end{table}
+        Only NE in Stage 1 is $(N, N)$
+
+        In stage two NE are: $(H, H)$ (stick) and $(D, D)$ (carrot)
+    \item Trivial SPE is playing stages independently: $(NHHHH, NHHHH)$ (or with the carrot)
+    \item Cooperative SPE: "play G at stage 1. If $(G, G)$ at stage 1, play D, otherwise play H". Sustainable if $u$(cooperative) + $\delta u$(carrot) $\geq u$(unilateral deviant) + $\delta u$(stick) \m{\longrightarrow 90 + 50\delta \geq 100 + 0\delta \longrightarrow \delta \geq \frac{1}{5}}
+\end{enumerate}
+}

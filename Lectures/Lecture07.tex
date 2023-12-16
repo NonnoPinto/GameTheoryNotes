@@ -1,0 +1,17 @@
+\section{Mixed strategies, Nash theorem}
+
+\Que{What is a mixed strategy?}
+\Ans[A mixed strategy ]{for player $i$ is, in a game \m{G = (S_1,\dots,S_n;u_1,\dots,u_n)} a probability distribution $p_i$ over set $S_i$.
+
+i.e. choosing strategies \m{S_i = (s_i^{(1)},\dots,s_i^{(k)}) with probabilities (p_i(s_i^{(1)}),\dots,p_i(s_i^{(k)}))}}
+
+\Que{What is expected utility?}
+\Ans[Expected utility ]{is (as expansion of utility) a real function over \m{\Delta S_1 \times \dots \times \Delta S_n}. For a chosen mixed strategy, payoff can be calculated as a weighted average over $p_i$. \mat{u_i(p_i,\dots,p_n) = \sum_{(s_1,\dots,s_n)\in S}p_1(s_1)\cdots p_n(s_n)\cdot u_i(s_1,\dots,s_n)} with \m{S = S_1 \times \cdots \times S_n}.
+
+Strict and weak dominance are, as always, $>$ or $\geq$. Nash equiibrium is based on expected utility.}
+
+\Que{What is the support of a mixed strategy?}
+\Ans[]{Given a mixed strategy $p_i\in \Delta S_i$ we define the support of $p_i$ as \m{supp(p_i) = s_i \in S_i : p_i(s_i) > 0} (if $p_i(s_i) = 1$, $s_i$ is a pure strategy).}
+
+\Que{Nash theorem}
+\Ans[]{Every game with finite pure-strategy sets $S_i$ has at least one Nash equilibrium, possibly involving mixed strategies. More formally: for game \m{G = (S_1,\dots,S_n;u_n,\dots,u_n)}, define \mat{BR_i : \Delta S_1 \times \cdots \times \Delta S_{i-1} \times S_{i+1}\longrightarrow 2^{\Delta S_i}} \mat{BR_i(p_{-i}) = {p_i \in \Delta S_i : u_i(p_i,p_{-i}) \text{ is maximized}}}. Then define \m{\textbf{BR}:\Delta S \longrightarrow 2^{\Delta S}} as \mat{\textbf{BR}(p) = BR_1(p_{-1}) \times \cdots \times BR_n (p_{-n})} $p$ is a NE if $p \in BR(p)$}

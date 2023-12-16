@@ -1,0 +1,130 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{watermark}
+\usepackage[dvipsnames]{xcolor}
+\graphicspath{ {./images/} }
+
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setlength{\headheight}{40pt}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{placeins}
+\usepackage{pdfpages}
+\usepackage[export]{adjustbox}
+
+\newcounter{question}
+\setcounter{question}{0}
+%Que{} per la domanda
+\newcommand\Que[1]{
+   \leavevmode\par
+   \stepcounter{question}
+   \noindent
+   \thequestion. Q - #1\par}
+
+%Ans[]{} per la risposta, quello che scrivi tra le graffe è in grassetto
+\newcommand\Ans[2][]{
+    \leavevmode\par\noindent
+   {\leftskip25pt
+    A - \textbf{#1}#2\par}}
+
+%Spec{} per eventuali spiegazioni della risposta, che finiscono sotto in font più piccolo
+\newcommand\Spec[1][]{%
+    \medskip\small{#1}}
+
+%\m perchè mi pareva più ordinato rispetto a mettere i dollari ogni 2 secondi
+\newcommand{\m}[1]{$#1$}
+%\ma per testo matematico da mettere a capo centrato super figo senza sbattersi per il begin center
+\newcommand{\mat}[1]{\abovedisplayskip=3pt\begin{gather*}#1\end{gather*}\belowdisplayshortskip=3pt}
+%\fa per il "per ogni"
+\newcommand{\fa}{~\forall~}
+%\EX per il simbolo del valore atteso
+\DeclareMathOperator{\EX}{\mathbb{E}}
+%per le lettere matematiche fighe
+\newcommand{\ml}[1]{\mathbb{#1}}
+
+%per il watermark inutile ma figo nella prima pagina
+\thiswatermark{
+    \centering
+    \put(-370,-690) {
+      \includegraphics[width=1.8\linewidth]{unipdbg}
+    }
+}
+
+\title{%
+Game Theory  Q\&A\\[3ex]
+\large{prof. Thomas Marchioro\\
+UniPD}}
+\author{Giovanni Zago}
+\date{a.y. 2023/24}
+
+
+\begin{document}
+
+\fancyhead{}
+\fancyhead[L]{\includegraphics[height=\headheight]{UnipdLogo}}
+\fancyhead[R]{\includegraphics[height=\headheight]{DEILogo}}
+\fancyhead[C]{Gratuitamente avete ricevuto, gratuitamente date\\\scriptsize{\textit{-Mt 10, 8}}}
+
+\fancyfoot{}
+\fancyfoot[C]{\scriptsize{For any mistake or suggestion, \href{mailto:giovanni.zago.3@studenti.unipd.it}{contact me}}}
+\fancyfoot[R]{\thepage}
+
+\pagenumbering{gobble}
+
+\makeatletter
+    \begin{titlepage}
+        \begin{center}
+            \includegraphics[width=0.2\linewidth, right]{DEILogo.jpg}\\[20ex]
+            {\huge \bfseries  \@title }\\[5ex] 
+            {\LARGE  \@author}\\[40ex] 
+            {\large \@date}
+        \end{center}
+    \end{titlepage}
+
+\tableofcontents
+
+\newpage
+\pagenumbering{arabic} 
+
+\section*{Disclaimer}
+This paper is a "flashcard style" summary of Game Theory course of UniPD, a.y. 2023/24. It's not intended to substitute slides or book study.
+
+\input{Lectures/Lecture01}
+\newpage
+\input{Lectures/Lecture02}
+\newpage
+\input{Lectures/Lecture03}
+\newpage
+\input{Lectures/Lecture04}
+\newpage
+\input{Lectures/Lecture05}
+\newpage
+\input{Lectures/Lecture06}
+\newpage
+\input{Lectures/Lecture07}
+\newpage
+\input{Lectures/Lecture08}
+\newpage
+\input{Lectures/Lecture09}
+\input{Lectures/Lecture10}
+\newpage
+\input{Lectures/Lecture11}
+\newpage
+\input{Lectures/Lecture12}
+\newpage
+\input{Lectures/Lecture13}
+\newpage
+\input{Lectures/Lecture14}
+\newpage
+\input{Lectures/Lecture15}
+
+\newpage
+\includepdf[pages=-,nup=1x2,landscape=false]{Appendix/Lecture10.pdf}
+\includepdf[pages=-]{Appendix/Exercise2.pdf}
+\includepdf[pages=-]{Appendix/Exercise3.pdf}
+\includepdf[pages=-]{Appendix/Exam1.pdf}
+\end{document}

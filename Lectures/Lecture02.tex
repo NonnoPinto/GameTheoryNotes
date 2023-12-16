@@ -1,0 +1,17 @@
+\section{Lotteries, VNM utility theorem, backward induction}
+
+\Que{When is it possible to model preferences between
+lotteries using average payoffs?}
+\Ans[]{When radmness is involved, i.e. when some events are called as nature ($N$) events, not in the hand of the player.}
+
+\Que{Which utility function can we use to model a risk-
+averse player? 1) \m{u(x) = x^2} or 2) \m{u(x) = log(x)}?}
+\Ans[2)]{Log funct models risk-averse: he prefers lower results with higher probability.}
+
+\Que{How can we solve a decision problem involving
+sequential choices made by both a player and
+Nature?}
+\Ans[]{Having the decision tree, starting with nodes at the end of the tree, substitute $N$ node with expected utility and player's move with payoff of the best move.}
+\Spec{\textbf{Expected utilty} is calculated as probability expected value:
+
+\m{\EX_{x \sim p}[u(x)] = \sum_{k=1}^n p(x_k)\cdot u(x_k)} where $p$ is the payoff and $u$ is the utilty (u don't say)}

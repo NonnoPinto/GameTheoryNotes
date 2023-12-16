@@ -1,0 +1,60 @@
+\section{Exercise on NE, constitutions, electoral systems}
+\begin{center}
+    (No questions in slides)
+\end{center}
+
+\Que{What is a constitution?}
+\Ans[Constitution]{, or \textbf{social welfare function}, is a map \mat{f:R(A)^n \longrightarrow R(A)\\(\succeq_1,\dots,\succeq_n) \xrightarrow{f} f(\succeq_1,\dots,\succeq_n)}} which maps a profile of $n$ rational preferences \m{\succeq_{(i)} = (\succeq_i,\dots,\succeq_n)} into a unique rational social preference \m{\succeq = f(\succeq_{(i)})}.
+
+\Que{What are constitution properties?}
+\Ans[Properties:]{
+\begin{itemize}
+    \item \textbf{Independence of Irrelevant Alternatives} (IIA) if for all pairs \m{(\succeq_{(i)}),(\succeq'_{(i)})} \mat{\fa i, \succeq_i|~{a,b} = \fa i, \succeq'_i|~{a,b} \Longrightarrow f(\succeq_{(i)})|~{a,b} = f(\succeq'_{(i)})|~{a,b}} i.e., adding or removing elements to the set of alternatives does not change the output of a constitution for the pair \m{\{a, b\}}
+    \item \textbf{Pareto-efficiency}: constitution $f$ is Pareto-efficient if $\fa$ profiles \m{(\succeq_{(i)})}, for all $a,b \in A$ \mat{\fa i, a \succeq_i b \Longrightarrow a \succeq b} where \m{\succeq~= f((\succeq_{(i)})}. i.e., if everyone prefers $a$ over $b$, that also becomes the preference of the constitution
+    \item \textbf{Dictatorship} if \m{\exists i} s.t. \mat{a \succeq_i b \Longrightarrow a \succeq b} where \m{\succeq~= f((\succeq_{(i)})}. i.e., if the constitution simply mimics $i$'s preferences.
+    \item \textbf{Monotonic} if a single individual ranking higher $a \in A$ never causes $a$ rank lower in the constitution
+    \item \textbf{Non-imposition} is satisfied if all rational preferences can be outputs
+\end{itemize}}
+\Ans[Theorems:]{
+\begin{itemize}
+    \item Arrow, 1951: there is no constitution $f$ for which all there properties hold at the same time: $f$ is not a dictatorship, $f$ is monotonic, $f$ satisfies IIA and non-imposition
+    \item Arrow, 1963 (Arrow's impossibility theorem): if constitution $f$ is Pareto-efficient and satisfies IIA $\Longrightarrow$ $f$ is a dictatorship
+\end{itemize}
+}
+
+\Que{Game theory and elections}
+\Ans[]{
+In an election a candidate the beats (by majority) all the others is called the \textbf{Condorcet winner}. If there is no winner, then there is a cycle (i.e., A $>$ B, B $>$ C, C $>$ A) called \textbf{Condorcet cycle}. With more than 3 candidates there can be a winner and a cycle. With preferences sufficiently randomized and a large (\m{n\longrightarrow \infty}) numbers of candidates, Condorcet cycles are sure to occur
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{|l|l|l|l|l|l|}
+    \hline
+        voters$\rightarrow$\\choices$\downarrow$ & 3 & 5 & 7 & 9 & $\infty$ \\ \hline
+        3 & 5.6\% & 6.9\% & 7.5\% & 7.8\% & 8.8\% \\ \hline
+        5 & 16.0\% & 20.0\% & 21.5\% & 23.0\% & 25.1\% \\ \hline
+        7 & 23.9\% & 29.9\% & 30.5\% & 34.2\% & 36.9\% \\ \hline
+        $\infty$ & 100.0\% & 100.0\% & 100.0\% & 100.0\% & 100.0\% \\ \hline
+    \end{tabular}
+\end{table}
+}
+\FloatBarrier
+\Que{What electoral methods we have?}
+\Ans[]{We have these methods, all with their strengths and weaknesses
+\begin{itemize}
+    \item \textbf{Plurality voting}: each voter sort candidates in order of personal preference. The candidate with most first places, wins.
+    
+    With this method, a candidate with a minority high preference (i.e., being in first place by less than 50\% of voters) wins over candidates in lower places by majority (i.e., if A is in first place for 4/10 voters, in last place for others, B is in second place for all voters and other first places are distributed by other candidates, A wins even if B is preferred by the majority over A)
+    \item \textbf{Two-phase run-off}: first round voting: select two candidates with highest amount of votes; second round voting: run-off between those candidates.
+    
+    With this method, a candidate being the "second choice" for a large majority will never be in the second phase, even if he is preferred to the others by majority (i.e. candidate C has few first place votes but it's preferred to A by every B's voter and it's preferred to B by every A's voter. It will not pass to the second phase, even if it's the Condorcet winner)
+    \item \textbf{Borda counting}: suppose we have M candidates, each person gave M-1 points to his favourite candidate, M-2 to the second and so on till the last-favourite, who receive 0 points.
+
+    With this method, a strong candidate voted by the majority and being in last position by the others loses against a candidate being mediocre (i.e., A is voted in first place by half voters and last place by the other half. Considering first two position of the other half equally distributed by B and C, A is the Condorcet winner. But B or C will win elections thanks to all the second place points). Borda counting has also an huge issue with dropouts: a single contestant withdrawn can totally change the outcome. {\tiny(examples in slides)}
+    \item \textbf{Approval voting}: each voter can give more than one preference, every preference is a vote, the number N of preferences goes from 1 to M, with M the number of candidates (for N=1 we are in plurality voting).
+
+    Depending on N, less favourite candidates has less or more chances to win.
+    \item \textbf{Instant run-off}: asking voters to place candidates in order of preferences, only first placed goes counts in order to second round voting. Iteratively, we remove candidates with lowest amount of top preferences, till we get a majority.
+
+    Also in this scenario, a small change (even an increase in preferences) can lead to a different outcome.
+\end{itemize}
+}
