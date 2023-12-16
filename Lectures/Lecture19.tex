@@ -1,0 +1,19 @@
+\section{Bayesian Nash equilibria, signaling.}
+\Que{Static Bayesian game}
+\Ans[A static Bayesian game]{ needs a set of player $\mathcal{N}=\{1,...,n\}$, action space $A_1,...,A_n$(pure strategy sets), type space $T_i$(for i=1,...,n), beliefs (on types) $\phi_1,...,\phi_n$, time-dependent payoffs $u_i(a_1,...,a_n,t_i)$.
+\[
+\mathbb{G}(\mathcal{N};A_1,...,A_n;T_1,...,T_n;\phi_1,...,\phi_n;u_1,...,u_n)
+\]
+A \textbf{pure strategy} for i can be seen as a map $s_i:T_i\rightarrow A_i$,i.e., it tells what i plays as his/her type is known. A \textbf{Mixed strategy} for i is a probability distribution over pure strategies.}
+\Que{Strategies of Bayesian games}
+\Ans[]{We can think of a general strategy as being defined before the type of i is even set. Player i decides a strategy $s_i: T_I\rightarrow A_i$, then if their type is $t_i\in T_i$, they will play $s_i(t_i)$. It allows other players to create beliefs over the strategy of a player who can be of different types}
+\Que{Bayesian Nash Equilibrium}
+\Ans[A Bayesian Nash Equilibrium ]{is a Nash equilibrium in Bayesian games. In $\mathbb{G}(\mathcal{N};A_1,...,A_n;T_1,...,T_n;\phi_1,...,\phi_n;u_1,...,u_n)$, joint strategy $s^{*}=(s_1^{*},...,s_n^{*})$ is a Bayesian Nash Equilibrium is, for each player i and type $t_i\in T_i, s_i^{*}$ maximizes the expected payoff against $s^{*}_{-i}$:
+\[
+s_i^{*}=\arg\max_{s_i\in S_i}\sum_{t_{-i}}u_i(s_i,s_{-i}^{*}(t_{-i}),t_i)\phi(t_{-i})
+\]
+that is the same as:
+\[
+    \mathbb{E}[u_i(s_i^*,s_{-i}^*(t_{-i}),t_i)|t_{-i}]\geq \mathbb{E}[u_i(s_i,s_{-i}^*(t_{-i}),t_i)|t_{-i}]
+\]
+Look at slides for some examples}

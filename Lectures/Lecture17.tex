@@ -1,0 +1,37 @@
+\section{Stackelberg games, dynamic bargaining}
+
+\Que{Stackelberg game}
+\Ans[A Stackelberg game ]{is a sequential version of a static game. Players move one after the other (first the leader, than he follower). Result, which can be obtained via backward induction, is called a Stackelberg equilibrium.}
+
+\Que{How to find Stackelberg equilibrium}
+\Ans[]{First find best options of the follower, then among these options, the best one for the leader. In case of a tie, we can have
+\begin{itemize}
+    \item generous follower
+    \item generous leader
+\end{itemize}
+}
+
+\Que{Stackelberg game consequences}
+\Ans[]{
+\begin{itemize}
+    \item leader payoff in Stackelberg equilibrium $\geq$ payoff in NE of the static game
+    \item follower payoff, in general, $\geq$ minimax
+\end{itemize}
+In a rational game, follower knows leader's move, but leader has a full knowledge of the game: can anticipate follower's move.
+}
+
+\Que{Dynamic bargain}
+\Ans[Bargain ]{means negotiation of resources. (It's a game of negotiation).
+
+Assume two players get to split a given amount of resources, we can use \textbf{dynamic bargaining} where players switch proposer/responder at any stage. If they disagree at any stage till stage $T$, they both get payoff 0. If they agre at stage $0 < t < T$ they get a discount $\delta^{t-1}$.
+
+Is the deadline is $T=1$ the game is called \textbf{Ultimatum game}.}
+
+\Que{SPE of dynamic bargain}
+\Ans[Proposition: ]{Any SPE of the dynamic bargaining game must have the players reaching an agreement in the first round
+\begin{itemize}
+    \item Simply a consequence of backward induction
+    \item Iterating the game: (i) wastes reward because of the discount; (ii) sends the players to another round of proposer-responder, which rational players want to avoid
+\end{itemize}
+
+For $T\xrightarrow{}\infty$ we have \mat{u_1 = \frac{1}{1+\delta}} \mat{u_2 = \frac{\delta}{1+\delta}}}
