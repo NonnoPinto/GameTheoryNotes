@@ -1,0 +1,56 @@
+\section{Repeated games (part 2), zero-sum games, minimax theorem}
+
+\Que{What are maximin and minmax?}
+\Ans[Maximin and minmax]{ are strategis s.t.:
+\begin{itemize}
+    \item \textbf{Maximin} \mat{w_i = \max_{s_i \in S_i} \min_{s_{-1} \in S_{-i}} u_i(s_i, s_{-i})} In other words, it's about finding a security strategy (a conservative approach in order for $i$ to achieve the highest payoff against $-i$ the worst move) $s^*_i = \arg\max_{s_i} f_i(s_i)$ with \mat{f_i:S_i\xrightarrow{}\ml{R}, f_i(s_i) = \min_{s_{-i} \in S_{-i}}u_i(s_i,s_{-i})} Then evaluate $w_i = f_i(s^*_i)$ 
+    \item \textbf{Minimax} \mat{z_i = \min_{s_{-1} \in S_{-i}} \max_{s_i \in S_i} u_i(s_i, s_{-i})} In other words, it's about finding a strategy for $i$ to calculate the minimum payoff against $-i$ move: $s^*_{-i} = \arg\min_{s_i} F_i(s_i)$ with \mat{F_i:S_i\xrightarrow{}\ml{R}, F_i(s_i) = \max_{s_i\in S_i} u_i(s_i,s_{-i})} Then evaluate $z_i = F_i(s^*_{-i})$
+\end{itemize}
+}
+\Spec{\textbf{Example}
+
+\begin{table}[!ht]
+\centering
+\begin{tabular}{lc|c|c|c|c}
+& & \multicolumn{3}{c}{Player B}       \\
+\multirow{3}{*}{\rotatebox{90}{Player A}} & & L & C & R & $f_A(\min)$\\ \cline{3-5} 
+& T & 5, - & 3, - & 4, - & 3           \\ \cline{3-5} 
+& D & 2, - & 6, - &  1, - & 1          \\ \cline{3-5}
+& $F_A(\max)$ & 5 & 6 & 4               \\
+\end{tabular}
+\end{table}
+Maxmin of A : 3
+
+Minimax of A: 4}
+
+\Que{Consequences of maximin and minimax}
+\Ans[]{We can prove that, if joint strategy is a NE \mat{maxmin_i \leq minmax_i \leq u_i(NE)}If joint strategy is not a NE then just first disequation}
+
+\Que{Zero-sum games}
+\Ans[Zero sum game ]{has the property \mat{u_i(s) = -u_i(s)} (in every cell you have $x,-x$)}
+
+\Que{Adversarial games}
+\Ans[Adversarial games ]{are a more general type of games where two players are adversaries and have utilities s.t. \mat{u_i\uparrow \Longleftrightarrow u_{-i}\downarrow} Many adversarial game can be framed as a zero-sum game with this trick: \m{u_A = \text{points}_A - \text{points}_B} and \m{u_B = -\text{points}_A}}
+
+\Que{Theorem}
+\Ans[For zero-sum game]{
+Let $\ml{G}$ be a zero-sum game with finite number of strategies. Then,
+\begin{enumerate}
+    \item $\ml{G}$ has a pure NE $\Longleftrightarrow maximin_i = minimax_i$ for each player $i$
+    \item All NE yield the same payoffs $(minimax_i ,-minimax_i)$
+    \item In all NE, every player is playing a security strategy
+\end{enumerate}
+}
+
+\Que{Consider a generic game $\ml{G}$
+\begin{itemize}
+    \item Is $maximin_i$ always equal to $minimax_i$ for each player $i$?
+    \item Is $maximin^p_i$ always equal to $minimax^p_i$ for each player $i$?
+    \item If $maximin_i = minimax_i$ for each player $i$, does that mean that the game has a pure NE? Does your answer change if $\ml{G}$ is zero-sum?
+    \item If $\ml{G}$ is a zero-sum game between $i$ and $-i$, is there a relationship between the minimax of $i$ and the maximin $-i$?
+\end{itemize}
+}
+\Ans[]{TODO:}
+
+\Que{What is the value of a zero-sum game? Does it always exist if the game has infinitely many strategies?}
+\Ans[]{TODO:}
