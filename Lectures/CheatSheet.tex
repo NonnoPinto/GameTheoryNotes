@@ -16,10 +16,18 @@ Supposing you know how to write the normal form of a game and find NE, here are 
     \end{tabular}
 \end{table}
 
+If you have three players you can use the same method, but you need $n$ matrixes, one for each move of one player (write as "title" of every matrix the move of the player left out).
+
+Small tip: if a player has always the same payoff in a matrix, you can write it as a single number, ignoring probabilities (since, once you collect the payoff, the sum of all probabilities is 1).
+
+If it's a zero-sum game, you can just write payoff of one player, usually the first one, and the other player will have the opposite payoff.
+
 \textbf{Find all additional Nash equilibria of this game in mixed strategies}
 \mat{u_A(T,T)q + u_A(T,N)(1-q) = u_A(N,T)q + u_A(N,N)(1-q)}
 \mat{u_B(T,T)p + u_B(N,T)(1-p) = u_B(T,N)p + u_B(N,N)(1-p)}
 Find \m{p\text{ and }q}
+
+If you have more than two players, probabilities would be $p_1, p_2, 1-p_1 - p_2$.
 
 \subsection*{Multistage games}
 
@@ -48,3 +56,10 @@ Same as before, but for \textbf{finitely repeated games}:
 \end{itemize}
 The intuition is to calculate the payoff of following cooperation plus the reward, then compare it with the payoff of deviating and receiving the stick.
 \mat{p + \delta p_c \geq p_d + \delta p_s}
+
+\subsubsection*{Baeysian games}
+For the extensive form of the game, you can use the same method as before, but you have to consider \textbf{Nature} as a player who makes the first move (typically, with probability \textit{p} and \textit{1-p}).
+
+The tree will have, then, Nature as root, and all possibile strategies as chilren, repeted for each Nature's move. 
+
+When it comes to write the normal form, you have to consider the probability of each strategy, which is the payoff of the stretegy times the probability of the path that leads to that strategy. For example, if one cell of the bi-matrix is AA, it means that player X will play A in any case: payoff is payoff of A in that leaf times probability of the path that leads to A.
